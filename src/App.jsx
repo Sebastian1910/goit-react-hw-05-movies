@@ -6,7 +6,6 @@ const MoviesPage = lazy(() => import("./pages/MoviesPage"));
 const MovieDetailsPage = lazy(() => import("./components/MovieDetails"));
 const Cast = lazy(() => import("./components/Cast"));
 const Reviews = lazy(() => import("./components/Reviews"));
-const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 const App = () => {
   return (
@@ -25,8 +24,8 @@ const App = () => {
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
-          <Route path="/404" element={<NotFoundPage />} />
-          <Route path="*" element={<Navigate to="/404" replace />} />
+          <Route path="*" element={<Navigate to="/" />} />{" "}
+          {/* Redirect unknown routes to HomePage */}
         </Routes>
       </Suspense>
     </div>
